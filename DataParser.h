@@ -3,10 +3,26 @@
 #include "Data.h"
 #include <string>
 #include <vector>
+#include <locale>
 
 class DataParser
 {
-protected:
+    
+public:
+
+    DataParser();
+    
+    void parse_data(const std::string& data_raw);
+
+    bool input_is_abort();
+
+    const std::vector<Data>& get_data_read() const;
+
+    std::vector<Data>& get_data_write();
+
+    void abort_input();
+    
+private:
 
     std::vector<Data> data_previous;
     
@@ -14,7 +30,9 @@ protected:
 
     std::string data_raw;
 
-    std::vector<std::string> termination_strings {"", "x", "exit", "end"};
+    const std::vector<std::string> termination_strings {"", "x", "exit", "end"};
+
+    const char space_char = ' ';
 
     bool input_abort;
 
@@ -24,20 +42,6 @@ protected:
 
     void check_input_termination();
 
-    std::string remove_spaces(const std::string string);
-    
-public:
-
-    DataParser();
-    
-    void parse_data(std::string data_raw);
-
-    bool input_is_abort();
-
-    std::vector<Data> get_data();
-
-    std::vector<Data>& get_data_ref();
-
-    void abort_input();
+    std::string remove_spaces(const std::string& string);
     
 };

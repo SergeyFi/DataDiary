@@ -1,8 +1,5 @@
 ﻿#include "DataParser.h"
 
-#include <algorithm>
-#include <locale>
-#include <string>
 
 void DataParser::check_data()
 {
@@ -10,9 +7,7 @@ void DataParser::check_data()
 }
 
 void DataParser::process_raw_data()
-{
-    const char space_char = ' ';
-    
+{   
     data_raw += space_char;
     
     std::vector<Data> data_array;
@@ -71,15 +66,13 @@ void DataParser::check_input_termination()
     }
 }
 
-std::string DataParser::remove_spaces(const std::string string)
+std::string DataParser::remove_spaces(const std::string& string)
 {
-    const char space_symbol = ' ';
-
     std::string new_string;
     
     for (int i = 0; i < string.length(); i++)
     {
-        if (string[i] != space_symbol)
+        if (string[i] != space_char)
         {
             new_string += string[i];
         }
@@ -93,7 +86,7 @@ DataParser::DataParser()
     input_abort = false;
 }
 
-void DataParser::parse_data(std::string data_raw)
+void DataParser::parse_data(const std::string& data_raw)
 {
     data.insert(data.end(), data_previous.begin(), data_previous.end());
     
@@ -112,14 +105,14 @@ bool DataParser::input_is_abort()
     return  input_abort;
 }
 
-std::vector<Data> DataParser::get_data()
+const std::vector<Data>& DataParser::get_data_read() const
 {
     return  data;
 }
 
-std::vector<Data>& DataParser::get_data_ref()
+std::vector<Data>& DataParser::get_data_write()
 {
-    return data;
+    return  data;
 }
 
 void DataParser::abort_input()

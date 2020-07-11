@@ -3,14 +3,14 @@
 
 struct Data
 {
-    std::string data_name;
-    std::string data_value;
-    unsigned long long int data_time;
+    std::string name;
+    std::string value;
+    unsigned long long int time;
 
-    Data(std::string data_name, std::string data_value)
+    Data(std::string name, std::string value)
     {
-        this->data_name = data_name;
-        this->data_value = data_value;
-        data_time = 0;
+        this->name = name;
+        this->value = value;
+        time = 0;
     }
 };

@@ -1,14 +1,13 @@
 ﻿#include "TimeMarker.h"
 
-#include<ctime>
 
-void TimeMarker::add_time_to_data(std::vector<Data> &data_array)
+void TimeMarker::add_time_to_data(std::vector<Data>& data_array)
 {
     for (Data& data : data_array)
     {
-        if (data.data_time == 0)
+        if (data.time == 0)
         {
-            data.data_time = std::time(0);
+            data.time = std::time(0);
         }
     }
 }

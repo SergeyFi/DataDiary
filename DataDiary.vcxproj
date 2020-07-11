@@ -156,7 +156,7 @@
   <ItemGroup>
     <ClCompile Include="DataDiary.cpp" />
     <ClCompile Include="DataParser.cpp" />
-    <ClCompile Include="DiaryDatabaseManager.cpp" />
+    <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="DiaryInput.cpp" />
     <ClCompile Include="DiaryManager.cpp" />
     <ClCompile Include="DiaryOutput.cpp" />
@@ -165,7 +165,7 @@
   <ItemGroup>
     <ClInclude Include="Data.h" />
     <ClInclude Include="DataParser.h" />
-    <ClInclude Include="DiaryDatabaseManager.h" />
+    <ClInclude Include="DatabaseManager.h" />
     <ClInclude Include="DiaryInput.h" />
     <ClInclude Include="DiaryManager.h" />
     <ClInclude Include="DiaryOutput.h" />

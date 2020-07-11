@@ -1,14 +1,16 @@
 ﻿#pragma once
-#include <vector>
 
+#include <vector>
+#include <iostream>
+#include <ostream>
 #include "Data.h"
 
 class DiaryOutput
 {
 public:
 
-    void version();
-    void hello();
-    void debug_data_output(std::vector<Data> data_array);
-    void goodbye();
+    void print_version();
+    void print_hello();
+    void print_debug_data_output(const std::vector<Data>& data_array);
+    void print_goodbye();
 };

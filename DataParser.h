@@ -21,10 +21,10 @@ public:
     std::vector<Data>& get_data_write();
 
     void abort_input();
+
+    void clear_data();
     
 private:
-
-    std::vector<Data> data_previous;
     
     std::vector<Data> data;
 

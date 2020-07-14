@@ -50,7 +50,7 @@ void DataParser::process_raw_data()
         }
     }
 
-    data_previous = data_array;
+    data.insert(data.end(), data_array.begin(), data_array.end());
 }
 
 void DataParser::check_input_termination()
@@ -88,8 +88,6 @@ DataParser::DataParser()
 
 void DataParser::parse_data(const std::string& data_raw)
 {
-    data.insert(data.end(), data_previous.begin(), data_previous.end());
-    
     this->data_raw = data_raw;
     
     check_data();
@@ -118,4 +116,9 @@ std::vector<Data>& DataParser::get_data_write()
 void DataParser::abort_input()
 {
     input_abort = true;
+}
+
+void DataParser::clear_data()
+{
+    data.clear();
 }

@@ -20,6 +20,7 @@ void DiaryManager::main_cicle()
         Data_parser->parse_data(Diary_input->get_data_raw());
         Time_marker->add_time_to_data(Data_parser->get_data_write());
         Data_base_manager->safe_data_to_file(Data_parser->get_data_read());
+        Data_parser->clear_data();
     }
 
     //Diary_output->print_debug_data_output(Data_parser->get_data_read());
